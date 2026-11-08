@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111b22">
+  <meta name="description" content="Интерактивная лаборатория Sugarscape по книге Growing Artificial Societies — Epstein & Axtell.">
+  <title>Sugarscape · Growing Artificial Societies</title>
+  <link data-trunk rel="rust" data-bin="sugarscape" data-cargo-profile="web" data-wasm-opt="0">
+  <style>
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#111b22;color:#e5e9e8;font:16px system-ui}
+    canvas{width:100%;height:100%;display:block;touch-action:none}
+    #loading{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:12px;pointer-events:none}
+    #loading strong{font-size:28px;color:#e4bf6d;letter-spacing:3px} #loading span{color:#9aabae}
+  </style>
+</head>
+<body>
+  <canvas id="sugarscape"></canvas>
+  <div id="loading" role="status"><strong>SUGARSCAPE</strong><span>Загрузка лаборатории · Rust / WebAssembly</span></div>
+  <noscript>Для лаборатории требуется JavaScript и WebAssembly.</noscript>
+  <script>window.addEventListener('TrunkApplicationStarted',()=>{});window.addEventListener('error',()=>{const e=document.getElementById('loading');if(e)e.innerHTML='<strong>SUGARSCAPE</strong><span>Не удалось запустить приложение. Обновите страницу и проверьте поддержку WebGPU / WebGL2.</span>';});</script>
+</body>
+</html>
